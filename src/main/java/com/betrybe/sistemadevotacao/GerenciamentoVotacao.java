@@ -21,7 +21,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   @Override
   public void cadastrarPessoaEleitora(String nome, String cpf) {
-
+    PessoaEleitora pessoaEleitora = new PessoaEleitora(cpf, nome);
+    pessoasEleitoras.add(pessoaEleitora);
   }
 
   @Override
