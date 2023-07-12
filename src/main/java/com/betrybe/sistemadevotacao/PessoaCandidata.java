@@ -11,8 +11,7 @@ public class PessoaCandidata extends Pessoa {
   private int votos;
 
   public PessoaCandidata(int numero, String nome) {
-    super();
-    this.nome = nome;
+    super(nome);
     this.numero = numero;
     this.votos = 0;
   }
