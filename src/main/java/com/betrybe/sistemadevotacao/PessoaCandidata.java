@@ -9,6 +9,7 @@ public class PessoaCandidata extends Pessoa {
    */
   private int numero;
   private int votos;
+
   /**
    * Constructor.
    */

@@ -27,13 +27,15 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   @Override
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
-//    if (cpfsComputados.contains(cpfPessoaEleitora)) {
-//      System.out.println("Pessoa eleitora já votou!");
-//    } else {
-//      for( PessoaCandidata pessoa : pessoasCandidatas){
-//
-//      }
-//    }
+    /**
+    if (cpfsComputados.contains(cpfPessoaEleitora)) {
+      System.out.println("Pessoa eleitora já votou!");
+    } else {
+      for( PessoaCandidata pessoa : pessoasCandidatas){
+
+      }
+    }
+     */
   }
 
   @Override
