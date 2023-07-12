@@ -3,7 +3,7 @@ package com.betrybe.sistemadevotacao;
 /**
  * Classe PessoaEleitora.
  */
-public class PessoaEleitora extends Pessoa{
+public class PessoaEleitora extends Pessoa {
   /**
    * Atributos e metodos.
    */

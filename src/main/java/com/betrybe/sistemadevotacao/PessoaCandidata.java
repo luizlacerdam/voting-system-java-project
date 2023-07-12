@@ -9,7 +9,9 @@ public class PessoaCandidata extends Pessoa {
    */
   private int numero;
   private int votos;
-
+  /**
+   * Constructor.
+   */
   public PessoaCandidata(int numero, String nome) {
     super(nome);
     this.numero = numero;
