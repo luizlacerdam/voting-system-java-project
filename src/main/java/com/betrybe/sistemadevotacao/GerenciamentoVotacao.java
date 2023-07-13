@@ -55,7 +55,6 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     }
 
     cpfsComputados.add(cpfPessoaEleitora);
-    System.out.println(cpfsComputados);
   }
 
   @Override

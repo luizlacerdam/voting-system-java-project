@@ -1,19 +1,35 @@
 package com.betrybe.sistemadevotacao;
 
+import java.util.Scanner;
+
+/**
+ * Classe principal com menu de interação.
+ */
 public class Principal {
 
+  /**
+   * Construtor, atribuindo as opções internas do menu comum.
+   */
   public static void main(String[] args) {
-    GerenciamentoVotacao gen1 = new GerenciamentoVotacao();
-    gen1.cadastrarPessoaCandidata("Luiz", 13);
-    gen1.cadastrarPessoaCandidata("Bolsonaro", 22);
-    gen1.cadastrarPessoaEleitora("Mabi", "123");
-    gen1.cadastrarPessoaEleitora("Apache", "321");
-    gen1.cadastrarPessoaEleitora("Gil", "456");
-    gen1.votar("123", 13);
-    gen1.votar("321", 13);
-    gen1.votar("456", 22);
+    GerenciamentoVotacao gerenciamentoVotacao = new GerenciamentoVotacao();
 
-    gen1.mostrarResultado();
+
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Cadastrar pessoa candidata?\n"
+        + "1 - Sim\n"
+        + "2 - Não\n"
+        + "Entre com o número correspondente à opção desejada:");
+
+    String opcao = scanner.nextLine();
+
+    if (opcao == "1") {
+      System.out.println("Entre com o nome da pessoa candidata:");
+      String nomeCandidata = scanner.nextLine();
+      System.out.println("Entre com o número da pessoa candidata:");
+      String numeroCadidata = scanner.nextLine();
+      gerenciamentoVotacao.cadastrarPessoaCandidata(nomeCandidata, Integer.parseInt(numeroCadidata));
+    }
+
   }
 
 }
