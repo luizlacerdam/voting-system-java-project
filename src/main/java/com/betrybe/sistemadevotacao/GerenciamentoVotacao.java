@@ -53,7 +53,10 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
     } else {
       for (PessoaCandidata pessoaCandidata : pessoasCandidatas) {
-        System.out.println("Nome: " + pessoaCandidata.getNome() + " - " + pessoaCandidata.getVotos() + " votos " + "( " + " ) ");
+        double percentual = Math.round((pessoaCandidata.getVotos() * 100.0) / votos);
+        System.out.println("Nome: "
+            + pessoaCandidata.getNome() + " - "
+            + pessoaCandidata.getVotos() + " votos " + "( " + percentual + "% ) ");
         System.out.println("Total de votos: " + votos);
 
       }
