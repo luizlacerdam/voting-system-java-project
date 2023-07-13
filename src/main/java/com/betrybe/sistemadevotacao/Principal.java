@@ -9,6 +9,7 @@ public class Principal {
     gen1.votar("123", 13);
     gen1.votar("123", 13);
 
+    gen1.mostrarResultado();
   }
 
 }
