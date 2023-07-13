@@ -9,33 +9,41 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   /**
    * Atributos e metodos.
    */
-  private ArrayList<PessoaCandidata> pessoasCandidatas;
-  private ArrayList<PessoaEleitora> pessoasEleitoras;
-  private ArrayList<String> cpfsComputados;
+  private ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<>();
+  private ArrayList<PessoaEleitora> pessoasEleitoras = new ArrayList<>();
+  private ArrayList<String> cpfsComputados = new ArrayList<>();
 
   @Override
   public void cadastrarPessoaCandidata(String nome, int numero) {
-    PessoaCandidata pessoaCandidata = new PessoaCandidata(numero, nome);
+    PessoaCandidata pessoaCandidata = new PessoaCandidata(nome, numero);
     pessoasCandidatas.add(pessoaCandidata);
   }
 
   @Override
   public void cadastrarPessoaEleitora(String nome, String cpf) {
-    PessoaEleitora pessoaEleitora = new PessoaEleitora(cpf, nome);
+    PessoaEleitora pessoaEleitora = new PessoaEleitora(nome, cpf);
     pessoasEleitoras.add(pessoaEleitora);
   }
 
   @Override
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
-    /**
-    if (cpfsComputados.contains(cpfPessoaEleitora)) {
-      System.out.println("Pessoa eleitora já votou!");
-    } else {
-      for( PessoaCandidata pessoa : pessoasCandidatas){
 
+    for (String cpf : cpfsComputados) {
+      if (cpf == cpfPessoaEleitora) {
+        System.out.println("Pessoa eleitora já votou!");
+        return;
       }
     }
-     */
+
+    for(PessoaCandidata pessoaCandidata : pessoasCandidatas){
+      if (pessoaCandidata.getNumero() == numeroPessoaCandidata) {
+        pessoaCandidata.receberVoto();
+        break;
+      }
+    }
+
+    cpfsComputados.add(cpfPessoaEleitora);
+    System.out.println(cpfsComputados);
   }
 
   @Override

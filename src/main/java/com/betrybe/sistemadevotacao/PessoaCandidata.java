@@ -13,10 +13,14 @@ public class PessoaCandidata extends Pessoa {
   /**
    * Constructor.
    */
-  public PessoaCandidata(int numero, String nome) {
+  public PessoaCandidata(String nome, int numero) {
     super(nome);
     this.numero = numero;
     this.votos = 0;
+  }
+
+  public void receberVoto() {
+    this.votos += 1;
   }
 
   public int getNumero() {
