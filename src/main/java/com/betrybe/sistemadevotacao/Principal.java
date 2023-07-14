@@ -15,7 +15,7 @@ public class Principal {
     Scanner scanner = new Scanner(System.in);
     Principal.cadastrarCandidato(scanner, gerenciamentoVotacao);
     Principal.cadastrarEleitor(scanner, gerenciamentoVotacao);
-
+    Principal.menuVotacao(scanner, gerenciamentoVotacao);
   }
 
   /**
@@ -32,6 +32,7 @@ public class Principal {
 
       String opcaoString = scanner.nextLine();
       opcao = Integer.parseInt(opcaoString);
+
       if (opcao == 1) {
         System.out.println("Entre com o nome da pessoa candidata:");
         String nomeCandidata = scanner.nextLine();
@@ -56,6 +57,7 @@ public class Principal {
 
       String opcaoString = scanner.nextLine();
       opcao = Integer.parseInt(opcaoString);
+
       if (opcao == 1) {
         System.out.println("Entre com o nome da pessoa eleitora:");
         String nomeEleitor = scanner.nextLine();
@@ -80,15 +82,17 @@ public class Principal {
 
       String opcaoString = scanner.nextLine();
       opcao = Integer.parseInt(opcaoString);
+
       if (opcao == 1) {
         System.out.println("Entre com o cpf da pessoa eleitora:");
         String cpfEleitor = scanner.nextLine();
         System.out.println("Entre com o número da pessoa candidata:");
         String numeroCandidato = scanner.nextLine();
         gerenciamentoVotacao.votar(cpfEleitor, Integer.parseInt(numeroCandidato));
+      } else if (opcao == 2) {
+        gerenciamentoVotacao.mostrarResultado();
       }
     }
+    gerenciamentoVotacao.mostrarResultado();
   }
-
-
 }
