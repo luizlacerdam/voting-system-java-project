@@ -21,10 +21,11 @@ public class Principal {
   /**
    * Classe responsável por cadastrar uma pessoa Candidata ja com menu.
    */
-  public static void cadastrarCandidato(Scanner scanner, GerenciamentoVotacao gerenciamentoVotacao) {
+  public static void cadastrarCandidato(Scanner scanner,
+      GerenciamentoVotacao gerenciamentoVotacao) {
     int opcao = 0;
 
-    while(opcao != 2) {
+    while (opcao != 2) {
       System.out.println("Cadastrar pessoa candidata?\n"
           + "1 - Sim\n"
           + "2 - Não\n"
@@ -38,7 +39,8 @@ public class Principal {
         String nomeCandidata = scanner.nextLine();
         System.out.println("Entre com o número da pessoa candidata:");
         String numeroCadidata = scanner.nextLine();
-        gerenciamentoVotacao.cadastrarPessoaCandidata(nomeCandidata, Integer.parseInt(numeroCadidata));
+        gerenciamentoVotacao.cadastrarPessoaCandidata(nomeCandidata,
+            Integer.parseInt(numeroCadidata));
       }
     }
   }
@@ -49,7 +51,7 @@ public class Principal {
   public static void cadastrarEleitor(Scanner scanner, GerenciamentoVotacao gerenciamentoVotacao) {
     int opcao = 0;
 
-    while(opcao != 2) {
+    while (opcao != 2) {
       System.out.println("Cadastrar pessoa eleitora?\n"
           + "1 - Sim\n"
           + "2 - Não\n"
@@ -74,7 +76,7 @@ public class Principal {
   public static void menuVotacao(Scanner scanner, GerenciamentoVotacao gerenciamentoVotacao) {
     int opcao = 0;
 
-    while(opcao != 3) {
+    while (opcao != 3) {
       System.out.println(" Entre com o número correspondente à opção desejada:\n"
           + " 1 - Votar\n"
           + " 2 - Resultado Parcial\n"

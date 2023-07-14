@@ -47,7 +47,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       }
     }
 
-    for(PessoaCandidata pessoaCandidata : pessoasCandidatas){
+    for (PessoaCandidata pessoaCandidata : pessoasCandidatas) {
       if (pessoaCandidata.getNumero() == numeroPessoaCandidata) {
         pessoaCandidata.receberVoto();
         break;
