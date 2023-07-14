@@ -14,8 +14,13 @@ public class Principal {
     GerenciamentoVotacao gerenciamentoVotacao = new GerenciamentoVotacao();
     Scanner scanner = new Scanner(System.in);
     Principal.cadastrarCandidato(scanner, gerenciamentoVotacao);
+    Principal.cadastrarEleitor(scanner, gerenciamentoVotacao);
+
   }
 
+  /**
+   * Classe responsável por cadastrar uma pessoa Candidata ja com menu.
+   */
   public static void cadastrarCandidato(Scanner scanner, GerenciamentoVotacao gerenciamentoVotacao) {
     int opcao = 0;
 
@@ -36,5 +41,54 @@ public class Principal {
       }
     }
   }
+
+  /**
+   * Classe responsável por cadastrar uma pessoa Eleitora ja com menu.
+   */
+  public static void cadastrarEleitor(Scanner scanner, GerenciamentoVotacao gerenciamentoVotacao) {
+    int opcao = 0;
+
+    while(opcao != 2) {
+      System.out.println("Cadastrar pessoa eleitora?\n"
+          + "1 - Sim\n"
+          + "2 - Não\n"
+          + "Entre com o número correspondente à opção desejada:");
+
+      String opcaoString = scanner.nextLine();
+      opcao = Integer.parseInt(opcaoString);
+      if (opcao == 1) {
+        System.out.println("Entre com o nome da pessoa eleitora:");
+        String nomeEleitor = scanner.nextLine();
+        System.out.println("Entre com o cpf da pessoa eleitora:");
+        String cpf = scanner.nextLine();
+        gerenciamentoVotacao.cadastrarPessoaEleitora(nomeEleitor, cpf);
+      }
+    }
+  }
+
+  /**
+   * Menu de votação.
+   */
+  public static void menuVotacao(Scanner scanner, GerenciamentoVotacao gerenciamentoVotacao) {
+    int opcao = 0;
+
+    while(opcao != 3) {
+      System.out.println(" Entre com o número correspondente à opção desejada:\n"
+          + " 1 - Votar\n"
+          + " 2 - Resultado Parcial\n"
+          + " 3 - Finalizar Votação");
+
+      String opcaoString = scanner.nextLine();
+      opcao = Integer.parseInt(opcaoString);
+      if (opcao == 1) {
+        System.out.println("Entre com o cpf da pessoa eleitora:");
+        String nomeEleitor = scanner.nextLine();
+        System.out.println("Entre com o cpf da pessoa eleitora:");
+        String cpf = scanner.nextLine();
+        gerenciamentoVotacao.cadastrarPessoaEleitora(nomeEleitor, cpf);
+      }
+    }
+  }
+
 
 }
