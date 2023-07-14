@@ -82,10 +82,10 @@ public class Principal {
       opcao = Integer.parseInt(opcaoString);
       if (opcao == 1) {
         System.out.println("Entre com o cpf da pessoa eleitora:");
-        String nomeEleitor = scanner.nextLine();
-        System.out.println("Entre com o cpf da pessoa eleitora:");
-        String cpf = scanner.nextLine();
-        gerenciamentoVotacao.cadastrarPessoaEleitora(nomeEleitor, cpf);
+        String cpfEleitor = scanner.nextLine();
+        System.out.println("Entre com o número da pessoa candidata:");
+        String numeroCandidato = scanner.nextLine();
+        gerenciamentoVotacao.votar(cpfEleitor, Integer.parseInt(numeroCandidato));
       }
     }
   }
